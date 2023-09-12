@@ -1,0 +1,759 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 110vh;
+    background-color: rgb(16, 1, 31);
+    display: grid;
+    place-items: center;
+}
+
+header {
+    width: 85%;
+    height: 95%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.sidemenu,
+.sidesong {
+    width: 25%;
+    height: 90%;
+    /* border: 1px solid white; */
+    background: rgb(22, 29, 66);
+    box-shadow: 5px 0px 6px 1px #0e1528;
+    color: aliceblue;
+
+
+}
+
+.sidemenu h1 {
+    font-size: 20px;
+    margin: 15x 0px 0px 20px;
+    font-weight: 700;
+}
+
+.sidesong {
+    width: 75%;
+    background: rgb(7, 1, 23);
+}
+
+.playmaster {
+    width: 100%;
+    height: 10%;
+    /* border: 2px solid white; */
+    background: rgb(22, 29, 66);
+    box-shadow: 0px 3px 8px #0e1528;
+}
+
+.sidemenu .playlist {
+    margin: 40px 0px 0px 20px;
+}
+
+.sidemenu .playlist h4 {
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    color: rgb(112, 109, 109);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: .3s linear;
+
+}
+
+.sidemenu .playlist h4:hover {
+    color: white;
+}
+
+.sidemenu .playlist h4 span {
+    position: relative;
+    margin-right: 35px;
+
+}
+
+.sidemenu .playlist h4 span::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    /* border: 2px solid rgb(112, 109, 109); */
+    border-radius: 50%;
+    top: -4px;
+    transition: .3s linear;
+
+}
+
+.sidemenu .playlist h4:hover span::before {
+    /* border: 2px solid white; */
+
+}
+
+.sidemenu .playlist h4 .fa-sharp {
+    display: none;
+}
+
+.sidemenu .playlist .active {
+    color: aqua;
+}
+
+.sidemenu .playlist .active span {
+    display: none;
+}
+
+.sidemenu .playlist .active .fa-sharp {
+    display: flex;
+    margin-right: 20px;
+}
+
+.songmenu {
+    width: 100%;
+    height: 310px;
+    /* border: 2px solid white; */
+    margin-top: 40px;
+    overflow: auto;
+
+}
+
+.songmenu::-webkit-scrollbar {
+    display: none;
+
+}
+
+.songmenu li {
+    list-style: none;
+    position: relative;
+    padding: 5px 0px 5px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .3s linear;
+
+}
+
+.songmenu li:hover {
+    background-color: rgb(112, 109, 109, 0.2);
+
+}
+
+.songmenu li span {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgb(76, 158, 161);
+
+
+}
+
+.songmenu li img {
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+}
+
+.songmenu li h5 {
+    font-size: 12px;
+    margin-left: 10px;
+    width: 170px;
+    /* border: 1px solid white; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.songmenu li h5 .subtitle {
+    font-size: 10px;
+    color: chocolate;
+}
+
+.fa-play {
+    position: absolute;
+    right: 15px;
+    font-size: 18px;
+}
+
+.sidesong {
+    z-index: 2;
+}
+
+.sidesong::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 450px;
+    background: url("./img/meri.jpg") center center no-repeat;
+    margin-left: 300px;
+    margin-top: 78px;
+    z-index: -1
+
+}
+
+.sidesong nav {
+    width: 100%;
+    height: 15%;
+    /* border: 1px solid white; */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(14, 8, 49);
+}
+
+.sidesong nav ul {
+    display: flex;
+}
+
+.sidesong nav ul li {
+    list-style: none;
+    position: relative;
+    padding: 15px;
+    font-weight: 1000;
+    cursor: pointer;
+    color: brown;
+    transition: .3s linear;
+
+}
+
+.sidesong nav ul li:nth-child(1) {
+    color: white;
+
+
+}
+
+.sidesong nav ul li span {
+    position: absolute;
+    width: 90%;
+    height: 1px;
+    background: aqua;
+    bottom: -1.1px;
+    left: 0;
+    border-radius: 20px;
+    padding: 1px;
+
+}
+
+.sidesong nav ul li:hover {
+    color: white;
+
+
+}
+
+.sidesong nav .search {
+    position: relative;
+    width: 50%;
+    padding: 2px 9px;
+    background-color: rgb(167, 164, 164);
+    border-radius: 20px;
+    /* border: 1px solid red; */
+
+}
+
+.sidesong nav .search::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    z-index: -1;
+}
+
+.sidesong nav .search .soild {
+    font-size: 15px;
+    padding: 3px 6px;
+
+}
+
+.sidesong nav .search input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    color: white;
+    font-size: 14px;
+
+}
+
+
+
+nav .User {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    /* border: 2px solid red; */
+    border-radius: 50%;
+}
+
+nav .User img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.content {
+    width: 90%;
+    height: 30%;
+    /* border: 1px solid red; */
+    margin: auto;
+    padding-top: 20px;
+
+}
+
+.content h1 {
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+.content p {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(134, 133, 131);
+    margin: 5px;
+
+}
+
+.content .btn {
+    margin-top: 13px;
+}
+
+.content .btn button {
+    width: 90px;
+    height: 30px;
+    border-radius: 12px;
+    background: aqua;
+    border: none;
+    outline: none;
+    transition: .3s linear;
+
+}
+
+.content .btn button:hover {
+    background: white;
+    color: blueviolet;
+
+}
+
+.famous-song {
+    width: 56%;
+    height: auto;
+    margin-top: 15px;
+    /* border: 1px solid aqua; */
+    background: rgb(6, 6, 39);
+    background-image: none;
+}
+
+.famous-song .trends {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.famous-song .trends .fa-solid {
+    color: aqua;
+    cursor: pointer;
+    transition: .3s linear;
+
+}
+
+.famous-song .trends .fa-solid:hover {
+    color: white;
+}
+
+.famous-song .trends h4 {
+    /* border: 2px solid red; */
+    padding-left: 12px;
+    padding-top: 2px;
+}
+
+.famous-song .trendsong {
+    width: 100%;
+    height: 150px;
+    margin-top: 15px;
+    display: flex;
+    /* border: 1px solid red; */
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+.famous-song .trendsong::-webkit-scrollbar {
+   display: none;
+}
+
+.famous-song .trendsong li {
+    min-width: 100px;
+    height: 140px;
+    list-style: none;
+    margin-right: 10px;
+    transition: .3s linear;
+}
+
+.famous-song .trendsong li:hover {
+    background: rgb(25, 25, 59);
+}
+
+.famous-song .trendsong li .playimg {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.famous-song .trendsong li .playimg img {
+    width: 100%;
+    height: 100%;
+    margin-left: 8px;
+}
+
+.famous-song .trendsong li .playimg .playList {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s linear;
+    margin-right: 31px;
+    /* border: 1px solid red; */
+    opacity: 0;
+}
+.famous-song .trendsong li:hover .playimg .playList {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s linear;
+    margin-right: 31px;
+    /* border: 1px solid red; */
+    opacity: 1;
+}
+.famous-song .trendsong li h5 {
+   padding :0px 4px;
+   line-height: 15px;
+   width: 100px;
+   font-size: 14px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+.famous-song .trendsong li .subtitle {
+  font-size: 14px;
+   overflow: hidden;
+   color: chocolate;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
+.popular-artists{
+    /* border: 1px solid white; */
+    height: auto;
+    width: 90%;
+    margin: auto;
+    
+}
+.popular-artists .trends{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   cursor: pointer;
+   transition: .3s linear;
+}
+.popular-artists .trends .fa-solid  {
+    color: aqua;
+    cursor: pointer;
+    transition: .3s linear;
+}
+.popular-artists .item  {
+width: 100%;
+height: auto;
+display: flex;
+overflow: auto;
+scroll-behavior: smooth;
+}
+.popular-artists .item::-webkit-scrollbar  {
+width: 100%;
+display: none;
+}
+.popular-artists .item li {
+min-width:60px;
+height: 50px;
+cursor: pointer;
+position: relative;
+list-style: none;
+margin-right: 4px;
+border-radius: 70px;
+}
+
+.popular-artists .item li img {
+width: 80%;
+height: 80%;
+border-radius: 70px;
+}
+
+
+
+.playmaster {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.wave {
+    width: 30px;
+    height: 30px;
+    /* border: 2px solid red; */
+    padding-bottom: 6px;
+    display: flex;
+    align-items: flex-end;
+    margin-right: 10px;
+
+}
+
+.wave1 {
+    width: 3px;
+    height: 10px;
+    background: aqua;
+    margin-right: 5px;
+    border-radius: 10px 10px 0px 0px;
+    /* animation: wave .5s linear infinite; */
+}
+
+.wave1:nth-child(2) {
+    height: 13px;
+    animation-delay: .4s;
+
+}
+
+.wave1:nth-child(3) {
+    height: 9px;
+    animation-delay: .8s;
+
+}
+
+.playmaster .active1 .wave1 {
+    animation: wave .5s linear infinite;
+}
+
+.playmaster .active1.wave1:nth-child(2) {
+    animation-delay: .4s;
+
+}
+
+.playmaster .active1.wave1:nth-child(3) {
+    animation-delay: .8s;
+
+}
+
+@keyframes wave {
+    0% {
+        height: 10px;
+    }
+
+    50% {
+        height: 15px;
+    }
+
+    100% {
+        height: 10px;
+    }
+}
+
+.playmaster img {
+    width: 35px;
+    height: 35px;
+}
+
+.playmaster h5 {
+    width: 130px;
+    /* border: 1px solid bisque; */
+    margin-left: 15px;
+    color: white;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.playmaster h5 .subtitle {
+    font-size: 11px;
+    color: chocolate;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.icons {
+    font-size: 20px;
+    color: white;
+    margin: 0px 22px 0px 42px;
+    outline: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.fa-solid {
+    cursor: pointer;
+    outline: none;
+}
+
+.shuff {
+    font-size: 17px;
+    margin-right: 10px;
+    width: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+}
+
+#download {
+    font-size: 20px;
+    margin-left: 10px;
+
+
+}
+
+.icons .fa-solid:nth-child(3) {
+    /* border: 1px solid brown; */
+    border-radius: 50%;
+    padding: 1px 9px 0px 12px;
+    margin: 0px 7px;
+}
+
+#currentStart {
+    font-size: 12px;
+    color: white;
+    width: 32px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.baar {
+    position: relative;
+    width: 43%;
+    height: 2px;
+    margin: 0px 15px;
+}
+
+.baar2 {
+    position: absolute;
+    background-color: aqua;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    transition: 1s linear;
+
+}
+
+.Dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: aqua;
+    border-radius: 50%;
+    left: 0%;
+    top: -1.5px;
+    transition: 1s linear;
+}
+
+.Dot::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    /* border: 1px solid aqua; */
+    border-radius: 50%;
+    left: -6px;
+    top: -6px;
+    box-shadow: inset 1px 1px 2px aqua;
+
+}
+
+.baar input {
+    position: absolute;
+    width: 100%;
+    top: -6px;
+    left: 0px;
+    cursor: pointer;
+    z-index: 999999999999999999999999999;
+    opacity: 0;
+
+}
+
+#currentEnd {
+    font-size: 12px;
+    color: white;
+    margin-right: 50px;
+    /* border: 2px solid red; */
+}
+
+
+.Vol {
+    position: relative;
+    width: 100px;
+    height: 2px;
+    margin-right: 50px;
+
+}
+
+.fa-volume-low {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    top: -10px;
+    left: -30px;
+    /* border: 2px solid red; */
+}
+
+.Vol input {
+    position: absolute;
+    width: 100px;
+    top: -7px;
+    left: 0;
+    cursor: pointer;
+    z-index: 99999999999999999999999999;
+    opacity: 0;
+}
+
+.Volbaar {
+    position: absolute;
+    background: aqua;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    transition: 1s linear;
+}
+
+.Vol .dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: aqua;
+    border-radius: 50%;
+    left: 0%;
+    top: -1.5px;
+    transition: 1s linear;
+}
+
+.Vol .dot::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    /* border: 1px solid aqua; */
+    border-radius: 50%;
+    left: -6px;
+    top: -6px;
+    box-shadow: inset 1px 1px 2px aqua;
+
+}
